@@ -1,6 +1,6 @@
-package cl.test.supertienda.model.retrofit
+package cl.test.supertienda.model.product.retrofit
 
-import cl.test.supertienda.model.entities.Product
+import cl.test.supertienda.model.product.entities.Product
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

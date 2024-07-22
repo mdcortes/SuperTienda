@@ -1,11 +1,11 @@
-package cl.test.supertienda.model.room
+package cl.test.supertienda.model.cart.room
 
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import cl.test.supertienda.model.room.dao.CartDAO
-import cl.test.supertienda.model.room.entities.CartItem
+import cl.test.supertienda.model.cart.room.dao.CartDAO
+import cl.test.supertienda.model.cart.room.entities.RoomCartItem
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.After
@@ -43,7 +43,7 @@ class CartDatabaseTest {
 
     @Test
     fun insertNewCartItem_checkSuccess() = runTest {
-        val item = CartItemsHelper.getCartItem()
+        val item = RoomCartItemsHelper.getCartItem()
         with(cartDAO) {
             addItemToCart(item)
 
@@ -55,11 +55,11 @@ class CartDatabaseTest {
 
     @Test
     fun insertCartItem_duplicate_overwrite() = runTest {
-        val item = CartItemsHelper.getCartItem()
+        val item = RoomCartItemsHelper.getCartItem()
         with(cartDAO) {
             addItemToCart(item)
 
-            val newItem = CartItemsHelper.changeCartItemPrice(item)
+            val newItem = RoomCartItemsHelper.changeCartItemPrice(item)
             addItemToCart(newItem)
 
             val insertedItems = getCartItems().first()
@@ -73,11 +73,11 @@ class CartDatabaseTest {
 
     @Test
     fun updateCartItemQuantity_increment() = runTest {
-        val item = CartItemsHelper.getCartItem()
+        val item = RoomCartItemsHelper.getCartItem()
         with(cartDAO) {
             addItemToCart(item)
 
-            val newItem = CartItemsHelper.incrementQuantityCartItem(item)
+            val newItem = RoomCartItemsHelper.incrementQuantityCartItem(item)
             assertEquals(item.quantity + 1, newItem.quantity)
 
             updateCartItem(newItem)
@@ -92,11 +92,11 @@ class CartDatabaseTest {
 
     @Test
     fun updateCartItemQuantity_decrement() = runTest {
-        val item = CartItemsHelper.getCartItem()
+        val item = RoomCartItemsHelper.getCartItem()
         with(cartDAO) {
             addItemToCart(item)
 
-            val newItem = CartItemsHelper.decrementQuantityCartItem(item)
+            val newItem = RoomCartItemsHelper.decrementQuantityCartItem(item)
             assertEquals(item.quantity - 1, newItem.quantity)
 
             updateCartItem(newItem)
@@ -113,8 +113,8 @@ class CartDatabaseTest {
      * Helper function for populating the database with several items
      * @return Items the database was populated with
      */
-    private suspend fun populateDatabase(): List<CartItem> {
-        val items = CartItemsHelper.getCartItems()
+    private suspend fun populateDatabase(): List<RoomCartItem> {
+        val items = RoomCartItemsHelper.getCartItems()
         items.forEach {
             cartDAO.addItemToCart(it)
         }

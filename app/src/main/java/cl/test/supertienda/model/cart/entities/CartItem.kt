@@ -1,4 +1,6 @@
-package cl.test.supertienda.model.entities
+package cl.test.supertienda.model.cart.entities
+
+import cl.test.supertienda.model.product.entities.Product
 
 /**
  * Class that represent an item in the user cart

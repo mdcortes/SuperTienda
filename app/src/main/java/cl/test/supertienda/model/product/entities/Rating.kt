@@ -1,4 +1,4 @@
-package cl.test.supertienda.model.entities
+package cl.test.supertienda.model.product.entities
 
 /**
  * Class that represents a product rating

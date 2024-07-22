@@ -1,4 +1,4 @@
-package cl.test.supertienda.model.entities
+package cl.test.supertienda.model.product.entities
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

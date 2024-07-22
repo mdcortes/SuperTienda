@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.google.devtools.ksp)
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -52,8 +53,6 @@ android {
 }
 
 dependencies {
-    ksp(libs.androidx.room.compiler)
-
     // AndroidX
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -63,16 +62,23 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
 
+    // Hilt
+    ksp(libs.dagger.hilt.compiler)
+    implementation(libs.dagger.hilt.android)
+
     //Tests
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
     testImplementation(libs.androidx.room.testing)
+    testImplementation(libs.mockito)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

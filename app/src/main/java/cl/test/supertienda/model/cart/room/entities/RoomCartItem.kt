@@ -1,4 +1,4 @@
-package cl.test.supertienda.model.room.entities
+package cl.test.supertienda.model.cart.room.entities
 
 import androidx.room.Embedded
 import androidx.room.Entity
@@ -11,8 +11,8 @@ import androidx.room.PrimaryKey
  * @param quantity Quantity for the product in the cart
  */
 @Entity
-data class CartItem(
+data class RoomCartItem(
     @PrimaryKey val productId: Int,
-    @Embedded val product: Product,
-    val quantity: Int
+    @Embedded val product: RoomProduct,
+    var quantity: Int
 )

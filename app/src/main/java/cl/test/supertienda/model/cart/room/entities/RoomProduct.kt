@@ -1,4 +1,4 @@
-package cl.test.supertienda.model.room.entities
+package cl.test.supertienda.model.cart.room.entities
 
 
 /**
@@ -8,7 +8,7 @@ package cl.test.supertienda.model.room.entities
  * @param price Product price
  * @param image Product image URL
  */
-data class Product(
+data class RoomProduct(
     val title: String,
     val price: Double,
     val image: String
