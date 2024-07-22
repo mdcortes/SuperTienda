@@ -204,7 +204,7 @@ class HomeViewModel @Inject constructor(
         if (products.isEmpty()) throw Exception("Product list is empty")
         var featuredProduct = products.first()
         (products - products.first()).forEach {
-            if (it.rating!!.totalRating > featuredProduct.rating!!.totalRating)
+            if (it.rating!!.totalRating!! > featuredProduct.rating!!.totalRating!!)
                 featuredProduct = it
         }
         return featuredProduct

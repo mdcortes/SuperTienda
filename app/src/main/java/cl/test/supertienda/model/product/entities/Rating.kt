@@ -12,5 +12,10 @@ data class Rating(
     /**
      * Total rating value used for selecting and showing the featured product in UI
      */
-    val totalRating by lazy { rate * count }
+    var totalRating: Double? = null
+        get() {
+            if (field == null) field = rate * count
+            return field
+        }
+        private set
 }

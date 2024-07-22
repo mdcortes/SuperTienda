@@ -15,6 +15,6 @@ class RatingTest {
 
         val rating = Rating(rate = rate, count = count)
 
-        assertEquals(rating.totalRating, rate * count, 0.0)
+        assertEquals(rating.totalRating!!, rate * count, 0.0)
     }
 }
