@@ -33,7 +33,7 @@ fun HomeTopBar(
     var itemCount by remember {
         mutableIntStateOf(0)
     }
-    
+
     itemCount = itemsInCart
     TopAppBar(
         title = { Text(text = stringResource(id = R.string.app_name)) },

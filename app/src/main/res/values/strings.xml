@@ -9,4 +9,14 @@
     <string name="add_to_cart_button_description">Agregar al carro</string>
 
     <string name="go_to_cart_button_description">Ir al carro</string>
+
+    <string name="cart_bar_title">Carro</string>
+    <string name="navigation_drawer_back_button_content_description">Ir atrás</string>
+
+    <string name="increment_button_description">Agregar uno más al carro</string>
+    <string name="decrement_button_description">Quitar uno del carro</string>
+    <string name="remove_item_button_label">Quitar</string>
+
+    <string name="total_amount_field">Valor total: $%.2f</string>
+    <string name="purchase_button">Comprar</string>
 </resources>
