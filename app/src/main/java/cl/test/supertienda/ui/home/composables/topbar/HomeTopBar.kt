@@ -1,5 +1,6 @@
 package cl.test.supertienda.ui.home.composables.topbar
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -17,8 +18,10 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import cl.test.supertienda.R
 import kotlinx.coroutines.launch
 
@@ -55,6 +58,7 @@ fun HomeTopBar(
             BadgedBox(badge = {
                 if (itemCount > 0) {
                     Badge(
+                        modifier = Modifier.padding(end = 8.dp),
                         containerColor = Color.Red,
                         contentColor = Color.White
                     ){
