@@ -16,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import cl.test.supertienda.R
@@ -29,9 +30,11 @@ fun HomeTopBar(
     goToCart: () -> Unit
 ) {
     val scope = rememberCoroutineScope()
-    val itemCount by remember {
-        mutableIntStateOf(itemsInCart)
+    var itemCount by remember {
+        mutableIntStateOf(0)
     }
+    
+    itemCount = itemsInCart
     TopAppBar(
         title = { Text(text = stringResource(id = R.string.app_name)) },
         navigationIcon = {
