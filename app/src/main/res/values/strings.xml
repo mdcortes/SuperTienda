@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Super Tienda</string>
+    
+    <string name="navigation_drawer_categories">Categorías</string>
+    <string name="navigation_drawer_button_content_description">Mostrar categorías</string>
+
+    <string name="featured_product_card_title">Destacado</string>
+    <string name="price_field">$%.2f</string>
+    <string name="add_to_cart_button_description">Agregar al carro</string>
+
+    <string name="go_to_cart_button_description">Ir al carro</string>
 </resources>
